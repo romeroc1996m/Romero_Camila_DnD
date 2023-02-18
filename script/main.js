@@ -11,7 +11,7 @@ let navButtons = document.querySelectorAll('#buttonHolder img'),
 	dropZones = document.querySelectorAll('.drop-zone'),
 	puzzleBoard = document.querySelector('.puzzle-board'),
 	tempLink = document.querySelector('a'),
-	dropElement = document.querySelector("#dropTarget"),
+	//dropElement = document.querySelector("#dropTarget"),
 	// overlapThreshold = ('.puzzle-board'), 
 
 	// set up a global variable to store a reference to the dragged piece
@@ -38,19 +38,20 @@ function changeBGImage() {
 }
 
 function handleStartDrag() { 
-	console.log('started draggin a piece!', this); 
+	//console.log('started draggin a piece!', this); 
 	draggPiece = this;
 }
 
 function handleDragOver(e) { 
 	e.preventDefault();
-	console.log('dragging over me!')
+	//console.log('dragging over me!');
 	//e.dataTransfer.setData("text", ev.target.id);
 }
 
 function handleDrop(e) { 
+	e.preventDefault();
 	console.log('dropped on me!'); 
-	e.target.appendChild(document.getElementById(draggPiece));
+	e.target.appendChild(draggPiece);
 	//e.dataTransfer.getData("text");
 	
 
@@ -83,7 +84,7 @@ function blockDefaultBehaviour(e) { // e is shorthand for event -> in this case 
 }
 
 // temp handling
-tempLink.addEventListener('click', blockDefaultBehaviour);
+tempLink.addEventListener('click', blockDefaultBehaviour),
 
 // gragging limit
 dropElement.addEventListener("dragenter", (event) => {
