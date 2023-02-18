@@ -86,7 +86,7 @@ function blockDefaultBehaviour(e) { // e is shorthand for event -> in this case 
 // temp handling
 tempLink.addEventListener('click', blockDefaultBehaviour),
 
-// gragging limit
+// dragging limit
 dropElement.addEventListener("dragenter", (event) => {
 	event.preventDefault();
   });
