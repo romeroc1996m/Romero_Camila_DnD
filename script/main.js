@@ -7,6 +7,7 @@
 // the variable name is the "basket"
 let navButtons = document.querySelectorAll('#buttonHolder img'),
 	theHeadline = document.querySelector('#headLine h1'),
+
 	// collect ALL of the draggable pieces in the drag zone
 	puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
 	// collect ALL of the drop zone elements
@@ -23,6 +24,7 @@ function changeBGImage() {
 	// change the background image in the drop zone
 	// the `${}` is called a JavaScript Template String - whatever is inside the curly
 	// braces is evaluated at runtime and interpolated (replaces the bracket notation)
+
 
 	// you can use variables, functions, etc inline in your code this way
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
@@ -63,5 +65,7 @@ function blockDefaultBehaviour(e) { // e is shorthand for event -> in this case 
 	e.preventDefault();
 }
 
+
 // temp handling
 tempLink.addEventListener('click', blockDefaultBehaviour);
+
